@@ -1,9 +1,12 @@
 import { Configuration, OpenAIApi } from "openai";
 const fs = require('fs')
 import axios from 'axios'
+require('dotenv').config({ path: '../.env'})
+
+console.log(process.env.APIKEY)
 
 const conf = new Configuration({
-    apiKey: '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'
+    apiKey: process.env.APIKEY,
 })
 
 const genImg = async (pedido: string) => {
@@ -27,4 +30,4 @@ const download_image = (url: any) => {
     }).then(response => Buffer.from(response.data, 'binary').toString('base64'))
 }
 
-genImg('manuel gomes')
+genImg('manuel games')
