@@ -1,3 +1,4 @@
 node_modules
 src/storage
 src/main.js
+.env
