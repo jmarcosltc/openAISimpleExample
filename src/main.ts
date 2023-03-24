@@ -4,7 +4,7 @@ import axios from 'axios'
 require('dotenv').config({ path: '../.env'})
 
 const conf = new Configuration({
-    apiKey: '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',
+    apiKey: '',
 })
 
 const genImg = async (pedido: string) => {
@@ -12,7 +12,7 @@ const genImg = async (pedido: string) => {
     const openai = new OpenAIApi(conf);
     const res = await openai.createImage({
         prompt: pedido,
-        n: 1, // n° de img
+        n: 4, // n° de img
         size: '1024x1024'
     })
     let image_url = res.data.data[0].url
